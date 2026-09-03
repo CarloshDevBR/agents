@@ -1,0 +1,16 @@
+prefix_rule(
+    pattern = [
+        "./gradlew",
+        ["test", "lint", "assembleDebug"],
+    ],
+    decision = "allow",
+    justification = "Safe Android validation commands",
+    match = [
+        "./gradlew test",
+        "./gradlew lint",
+        "./gradlew assembleDebug",
+    ],
+    not_match = [
+        "./gradlew publish",
+    ],
+)
